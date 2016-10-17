@@ -71,4 +71,13 @@ class FriendsController < ApplicationController
     def friend_params
       params.require(:friend).permit(:avatar, :name, :medium, :description)
     end
+
+    #This is where the logic will go to sign up new users
+    def signup
+
+    end
+
+    #This is where the logic will go to login with existing
+    def signin
+    end
 end
