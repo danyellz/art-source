@@ -10,6 +10,30 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery_ujs
-//= require_tree .
+// = require jquery
+// = require jquery_ujs
+// = require_tree .
+
+$(document).ready(function() {
+  // This is called after the document has loaded in its entirety
+  // This guarantees that any elements we bind to will exist on the page
+  // when we try to bind to them
+  console.log("Hit JS");
+
+  var toggleSignup = $('#signup-form').css('display', 'none')
+
+  $('#open-signup').click(function(event) {
+    event.preventDefault();
+
+    toggleSignup.toggle();
+  });
+
+  var toggleSignin = $('#signin-form').css('display', 'none')
+
+  $('#open-login').click(function(event) {
+    event.preventDefault();
+
+    toggleSignin.toggle();
+  });
+});
+

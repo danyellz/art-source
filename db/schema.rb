@@ -11,19 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20120802191046) do
+ActiveRecord::Schema.define(version: 20161017190903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "friends", force: :cascade do |t|
     t.string   "name"
+    t.string   "medium"
+    t.string   "description"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "secure_pass"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

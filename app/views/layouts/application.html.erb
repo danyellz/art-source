@@ -1,26 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Paperclip Demo</title>
+
+  <title>ArtSource</title>
   <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <%= stylesheet_link_tag 'application', :media => 'all' %>
   <%= csrf_meta_tags %>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="/app/assets/application.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
+
 </head>
 <body>
   <header>
     <div class="header-wrap">
-      <h1><%= link_to 'Paperclip Demo', root_path %></h1>
-      <%= link_to 'Fork me on github', 'https://github.com/thoughtbot/paperclip_demo', target: 'blank', class: 'fork_me' %>
+      <h1><%= link_to 'ArtSource', root_path %><button id='open-signup'>Sign Up</button>
+  <button id="open-login">Login</button></h1>
     </div>
-  </header>
+
+     <form class = "auth-form" id="signup-form" action="/registrations" method="post">
+      First Name: <input type="text" name="fname">
+      <br>
+      Last Name: <input type="text" name="lname">
+      <br>
+      Email: <input type="text" name="email">
+      <br>
+      Password: <input type="text" name="password">
+      <button type="submit" value="submit">Sign Up</button>
+   </form>
+   <form class = "auth-form" id="signin-form" action="/sessions" method="post">
+     Email: <input type="text" name="email">
+      <br>
+     Password: <input type="text" name="password">
+      <button type="submit" value="submit">Log In</button>
+   </form>
+</header>
+
+  <div class="jumbotron">
+    <div class="col-md-7">
+      <h1>ArtSource</h1>
+      <p>Art that's meaningful to your business</p>
+    </div>
+  </div>
 
   <div id="main-wrap">
     <%= yield %>
   </div>
 
-  <footer>
-    <p id="copyright">© 2012 thoughtbot, inc. The <em>design of a robot</em> and <em>thoughtbot</em> are registered trademarks of <%= link_to 'thoughtbot, inc', 'http://thoughtbot.com', target: 'blank' %>.</p>
-  </footer>
+   <div id="info-jumbo">
+     Information About
+   </div>
+
+  <div id="map"></div>
+
+  <script>
+
+      function initMap() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: {lat: -28.024, lng: 140.887}
+        });
+
+        // Create an array of alphabetical characters used to label the markers.
+        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+        var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+          });
+        });
+
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      }
+      var locations = [
+        {lat: 37.7846334, lng: -122.3974137},
+        {lat: 37.7846334, lng: -122.3974137},
+        {lat: 37.7846334, lng: -122.3974137},
+        {lat: 37.7846334, lng: -122.3974137},
+        {lat: 37.7846334, lng: -122.3974137},
+        {lat: 37.7846334, lng: -122.3974137},
+        {lat: 37.7846334, lng: -122.3974137},
+        {lat: 37.7846334, lng: -122.3974137},
+        {lat: 37.7846334, lng: -122.3974137},
+        {lat: 37.7846334, lng: -122.3974137},
+        {lat: 37.7846334, lng: -122.3974137},
+        {lat: 37.7846334, lng: -122.3974137},
+        {lat: 37.7846334, lng: -122.3974137},
+        {lat: 37.7846334, lng: -122.3974137},
+        {lat: 37.7846334, lng: -122.3974137},
+        {lat: 37.7846334, lng: -122.3974137},
+      ]
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANmKVc7-NfVMhyHtT9YYCz6EsVjYnPrnA&callback=initMap">
+    </script>
+
   <%= javascript_include_tag "application" %>
 </body>
 </html>

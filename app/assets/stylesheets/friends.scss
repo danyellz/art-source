@@ -27,11 +27,12 @@ body {
 }
 
 header {
-  background: transparent url(logo.png) no-repeat 40px 20px;
+  background-color: gray;
   margin: 30px auto 0px auto;
   padding: 0 40px;
   width: 1040px;
   position: relative;
+  width: 100%;
 
   div.header-wrap {
     border-bottom: 1px solid $color-2;
@@ -47,7 +48,6 @@ header {
   }
 
   a.fork_me {
-    background: url(github.png) no-repeat;
     padding-left: 25px;
     position: absolute;
     top: 0px;
@@ -58,6 +58,10 @@ header {
       color: #AD141E;
     }
   }
+}
+
+#open-signup {
+  margin-left: 50%;
 }
 
 div#main-wrap {
@@ -188,6 +192,27 @@ input {
   padding: 5px 0;
 }
 
+body {
+    background-color: red !important;
+}
+
+.jumbotron {
+  height: 500px !important;
+  background-image: url('https://img1.etsystatic.com/036/0/9246338/il_fullxfull.622983983_mu06.jpg');
+}
+
+.jumbotron:after {
+  margin-top: 200px;
+
+  display: block;
+  position: center;
+  background-image: linear-gradient(to bottom, transparent 0%, white 100%);
+  margin-top: 60px;
+  height: 100%;
+  width: 100%;
+  content: '';
+}
+
 input[type=text] {
   border: 1px solid $color-4;
   outline: none;
@@ -216,6 +241,14 @@ form {
       border: none;
     }
   }
+}
+
+#signup-form {
+  display: none;
+}
+
+#signin-form {
+  display: none;
 }
 
 // Other
