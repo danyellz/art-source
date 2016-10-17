@@ -12,28 +12,17 @@
  *= require_tree .
  *= require reset
 */
-
-body {
-	background-color: red;
+body{
 	font-family: 'Bungee Inline', cursive !important;
 }
 
-.col-md-7 {
-	margin-top: 20%;
-}
-
 #map {
-	height: 400px;
+	height: 200px;
 	width: 100%;
 }
 
-#info-jumbo {
-	background-image: none;
-	height: 200px !important;
+#info-jumbo{
+	height: 200px;
+	width: 100%;
 	background-color: gray;
 }
-
-.auth-form {
-	margin-left: 65%;
-}
-
