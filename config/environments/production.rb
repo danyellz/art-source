@@ -1,9 +1,6 @@
 PaperclipDemo::Application.configure do
 
 config.serve_static_assets = true
-<script src="/javascripts/test.js" type="text/javascript" /> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
   config.cache_classes = true
