@@ -44,6 +44,7 @@ GEM
       jmespath (~> 1.0)
     aws-sdk-resources (2.3.0)
       aws-sdk-core (= 2.3.0)
+    bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -187,6 +188,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk (~> 2.3)
+  bcrypt (~> 3.1.7)
   capybara
   coffee-rails
   factory_girl_rails
@@ -202,4 +204,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.11.2
+   1.13.5

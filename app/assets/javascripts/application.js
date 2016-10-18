@@ -35,5 +35,21 @@ $(document).ready(function() {
 
     toggleSignin.toggle();
   });
+
+  $('#signup-form').submit(function(event) {
+    event.preventDefault();
+    console.log("hit auth-form");
+
+    var url = $(this).attr('action')
+    console.log(url);
+
+    $.ajax({
+      url: url,
+      method: 'POST',
+      data: $(this).serialize()
+    }).done(function(response){
+      console.log(response)
+    });
+  });
 });
 

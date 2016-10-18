@@ -23,16 +23,15 @@
   <button id="open-login">Login</button></h1>
     </div>
 
-     <form class = "auth-form" id="signup-form" action="/registrations" method="post">
-      First Name: <input type="text" name="fname">
-      <br>
-      Last Name: <input type="text" name="lname">
+     <form class = "auth-form" id="signup-form" action="/sessions" method="post">
+      Name: <input type="text" name="fname">
       <br>
       Email: <input type="text" name="email">
       <br>
       Password: <input type="text" name="password">
       <button type="submit" value="submit">Sign Up</button>
    </form>
+
    <form class = "auth-form" id="signin-form" action="/sessions" method="post">
      Email: <input type="text" name="email">
       <br>
