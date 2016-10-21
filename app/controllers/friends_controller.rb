@@ -69,7 +69,7 @@ class FriendsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def friend_params
-      params.require(:friend).permit(:avatar, :name, :medium, :description)
+      params.require(:friend).permit(:avatar, :name, :medium, :description, :lat, :lng)
     end
 
     #This is where the logic will go to sign up new users

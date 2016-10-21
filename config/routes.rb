@@ -1,10 +1,16 @@
 PaperclipDemo::Application.routes.draw do
-	resources :sessions, only: [:new, :create, :destroy]
+  get 'users/create'
 
-	get 'sessions/new'
-	get 'sessions/create'
-	get 'sessions/destroy'
+	resources :sessions, only: [:new, :create, :destroy]
+	resources :users, only: [:create]
 
 	resources :friends
 	root :to => 'friends#index'
+
+	get '/signup' => 'users#new'
+    post '/users' => 'users#create'
+
+    get '/login' => 'sessions#new'
+  	post '/login' => 'sessions#create'
+  	get '/logout' => 'sessions#destroy'
 end

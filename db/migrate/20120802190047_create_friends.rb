@@ -4,6 +4,8 @@ class CreateFriends < ActiveRecord::Migration
       t.string :name
       t.string :medium
       t.string :description
+      t.string :lat
+      t.string :lng
       t.integer :user_id
 
       t.timestamps

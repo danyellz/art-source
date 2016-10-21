@@ -18,7 +18,23 @@ $(document).ready(function() {
   // This is called after the document has loaded in its entirety
   // This guarantees that any elements we bind to will exist on the page
   // when we try to bind to them
-  console.log("Hit JS");
+  window.onload = getMyLocation();
+
+  function getMyLocation() {
+  
+  if (navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var lat = position.coords.latitude;
+      var lng = position.coords.longitude;
+      console.log(lat);
+      console.log(lng);
+      $('#lat_field').val(lat).to_float;
+      $('#lon_field').val(lng).to_float;
+    });
+  } else {
+    alert("Could not get location!");
+  }
+}
 
   var toggleSignup = $('#signup-form').css('display', 'none')
 
@@ -34,22 +50,6 @@ $(document).ready(function() {
     event.preventDefault();
 
     toggleSignin.toggle();
-  });
-
-  $('#signup-form').submit(function(event) {
-    event.preventDefault();
-    console.log("hit auth-form");
-
-    var url = $(this).attr('action')
-    console.log(url);
-
-    $.ajax({
-      url: url,
-      method: 'POST',
-      data: $(this).serialize()
-    }).done(function(response){
-      console.log(response)
-    });
   });
 });
 

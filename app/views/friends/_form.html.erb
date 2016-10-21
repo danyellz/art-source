@@ -20,12 +20,16 @@
     <%= f.text_field :medium %>
   </div>
   <div class="field">
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
   </div>
   <div class="field">
     <%= f.label :image %>
     <%= f.file_field :avatar%>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :lat, :id => "lat_field"%>
+    <%= f.hidden_field :lng, :id => "lon_field"%>
   </div>
   <div class="actions">
     <%= f.submit 'Upload Art' %>

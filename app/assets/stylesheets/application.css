@@ -26,3 +26,21 @@ body{
 	width: 100%;
 	background-color: gray;
 }
+
+#signup-form {
+	float: right;
+	margin-right: 10%;
+  display: none;
+  border:none;
+}
+
+#signin-form {
+  float: right;
+	margin-right: 10%;
+  display: none;
+  border:none;
+}
+
+.col-md-6 {
+	padding-top: 15%;
+}
