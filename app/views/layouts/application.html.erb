@@ -60,9 +60,8 @@
 </header>
 
   <div class="jumbotron">
-    <div class="col-md-6">
-      <h1>ArtSource</h1>
-      <p>Art that's meaningful to your business</p>
+    <div class="col-md-7">
+      <h2>the hub of art that brings value to your business</h2>
     </div>
   </div>
 
@@ -70,9 +69,21 @@
     <%= yield %>
   </div>
 
+  <div class="animateblock top">
+
    <div id="info-jumbo">
-     Information About
+     <div class="animateblock left">
+     LEFT
+      <img src="" alt="white ipod dock">
+    </div>
+    
+    <div class="animateblock right">
+    RIGHT
+      <img src="" alt="white iphone">
+    </div>
    </div>
+
+   
 
   <div id="map"></div>
 
@@ -81,8 +92,8 @@
       function initMap() {
 
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 3,
-          center: {lat: -28.024, lng: 140.887}
+          zoom: 15,
+          center: {lat: 37.784705599999995, lng: -122.39762309999998}
         });
 
         // Create an array of alphabetical characters used to label the markers.
@@ -103,24 +114,10 @@
         var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
       }
-      var locations = [
-        {lat: 37.7846334, lng: -122.3974137},
-        {lat: 37.7846334, lng: -122.3974137},
-        {lat: 37.7846334, lng: -122.3974137},
-        {lat: 37.7846334, lng: -122.3974137},
-        {lat: 37.7846334, lng: -122.3974137},
-        {lat: 37.7846334, lng: -122.3974137},
-        {lat: 37.7846334, lng: -122.3974137},
-        {lat: 37.7846334, lng: -122.3974137},
-        {lat: 37.7846334, lng: -122.3974137},
-        {lat: 37.7846334, lng: -122.3974137},
-        {lat: 37.7846334, lng: -122.3974137},
-        {lat: 37.7846334, lng: -122.3974137},
-        {lat: 37.7846334, lng: -122.3974137},
-        {lat: 37.7846334, lng: -122.3974137},
-        {lat: 37.7846334, lng: -122.3974137},
-        {lat: 37.7846334, lng: -122.3974137},
-      ]
+      var locations = []
+      <%Friend.all.each do |image|%>
+        locations.push({lat: <%=image.lat%>, lng: <%=image.lng%>})
+      <%end%>
     </script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>
