@@ -9,6 +9,7 @@ gem "jquery-rails"
 gem "paperclip"
 gem "pg"
 gem "sass-rails"
+gem "shotgun"
 gem "uglifier"
 
 group :development do
