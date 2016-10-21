@@ -15,7 +15,6 @@ class FriendsController < ApplicationController
   # GET /friends/new
   def new
     @friend = Friend.new
-    
   end
 
   # GET /friends/1/edit
@@ -28,7 +27,6 @@ class FriendsController < ApplicationController
     @friend = Friend.new(friend_params)
     user_id = current_user.id
     @friend.update(user_id: user_id)
-    p @friend
 
     respond_to do |format|
       if @friend.save
